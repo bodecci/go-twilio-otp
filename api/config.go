@@ -17,3 +17,11 @@ func envACCOUNTSID() string {
 	//use os.Getenv to retrieve an environment variable
 	return os.Getenv("TWILIO_ACCOUNT_SID")
 }
+
+func envAUTHTOKEN() string {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatalf("Error loading .env file %v", err)
+	}
+	return os.Getenv("TWILIO_AUTHTOKEN")
+}
