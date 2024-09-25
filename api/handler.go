@@ -5,9 +5,12 @@ import (
 	"fmt"
 	"go-otp/data"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
+
+const appTimeout = time.Second * 10
 
 func (app *Config) sendSMS() gin.HandlerFunc {
 	return func(c *gin.Context) {
