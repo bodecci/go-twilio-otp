@@ -25,3 +25,11 @@ func envAUTHTOKEN() string {
 	}
 	return os.Getenv("TWILIO_AUTHTOKEN")
 }
+
+func envSERVICESID() string {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatalf("Error loading .env file", err)
+	}
+	return os.Getenv("TWILIO_SERVICES_SID")
+}
